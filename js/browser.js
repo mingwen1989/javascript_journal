@@ -7,7 +7,7 @@ $(document).ready(function() {
     var body = $("#body").val();
 
     var newEntry = new Entry(title, body);
-    $(".diaryEntry").append(newEntry.read());
+    $(".diaryEntry").append(newEntry.read() + newEntry.count());
     $(".entry").show();
   });
 });

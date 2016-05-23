@@ -9,7 +9,11 @@ exports.Entry = function(title, body) {
 var moment = moment().format();
 
 exports.Entry.prototype.read = function() {
-  return "Journal Entry: " + this.title + "<br>" + moment + "<br>" + " Dear Diary, " + this.body + "<br><br>";
+  return "Journal Entry: " + this.title + "<br>" + moment + "<br>" + " Dear Diary, " + this.body + "<br><br>" + "Number of words: ";
+}
+
+exports.Entry.prototype.count = function() {
+  return this.body.split(" ").length + "<br><br>";
 }
 
 },{"moment":2}],2:[function(require,module,exports){
@@ -4063,7 +4067,7 @@ $(document).ready(function() {
     var body = $("#body").val();
 
     var newEntry = new Entry(title, body);
-    $(".diaryEntry").append(newEntry.read());
+    $(".diaryEntry").append(newEntry.read() + newEntry.count());
     $(".entry").show();
   });
 });
@@ -4078,7 +4082,11 @@ exports.Entry = function(title, body) {
 var moment = moment().format();
 
 exports.Entry.prototype.read = function() {
-  return "Journal Entry: " + this.title + "<br>" + moment + "<br>" + " Dear Diary, " + this.body + "<br><br>";
+  return "Journal Entry: " + this.title + "<br>" + moment + "<br>" + " Dear Diary, " + this.body + "<br><br>" + "Number of words: ";
+}
+
+exports.Entry.prototype.count = function() {
+  return this.body.split(" ").length + "<br><br>";
 }
 
 },{"./../js/journal.js":1,"moment":2}]},{},[3]);

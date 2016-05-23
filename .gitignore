@@ -35,8 +35,8 @@
 ehthumbs.db
 Thumbs.db
 
-# Java #
-########
+# Node #
+##############
 build/
 node_modules/
 tmp/
